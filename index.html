@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jon Hecky - Full Stack Developer</title>
+    <link rel="stylesheet" href="css/style.css?v=2025101503">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:wght@300;400;500;600;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <div class="logo-icon">S</div>
+                </div>
+                
+                <div class="nav-menu">
+                    <a href="#about" class="nav-item">
+                        <span class="nav-number">01.</span>
+                        <span class="nav-text">About</span>
+                    </a>
+                    <a href="#portfolio" class="nav-item">
+                        <span class="nav-number">02.</span>
+                        <span class="nav-text">Experience</span>
+                    </a>
+                    <a href="#portfolio" class="nav-item">
+                        <span class="nav-number">03.</span>
+                        <span class="nav-text">Work</span>
+                    </a>
+                    <a href="#contact" class="nav-item">
+                        <span class="nav-number">04.</span>
+                        <span class="nav-text">Contact</span>
+                    </a>
+                    <a href="#" class="resume-btn">Resume</a>
+                </div>
+                
+                <!-- Mobile Header Controls -->
+                <div class="mobile-controls">
+                    <a href="#" class="mobile-resume-btn">Resume</a>
+                    <div class="sun-moon-toggle">
+                        <input type="checkbox" id="mobile-dad-mode-toggle">
+                        <label for="mobile-dad-mode-toggle" class="sun-moon-switch">
+                            <div class="sun-moon-icon">
+                                <svg class="sun-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12" r="4" fill="currentColor"/>
+                                    <path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <svg class="moon-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" fill="currentColor"/>
+                                </svg>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <!-- Animated Spider Web Background -->
+        <div class="spider-web-container">
+            <svg class="spider-web" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+                <!-- Main Central Web -->
+                <g class="web-lines main-web">
+                    <!-- Radial lines from center -->
+                    <line class="web-line radial-1" x1="600" y1="400" x2="100" y2="100"/>
+                    <line class="web-line radial-2" x1="600" y1="400" x2="600" y2="50"/>
+                    <line class="web-line radial-3" x1="600" y1="400" x2="1100" y2="100"/>
+                    <line class="web-line radial-4" x1="600" y1="400" x2="1150" y2="400"/>
+                    <line class="web-line radial-5" x1="600" y1="400" x2="1100" y2="700"/>
+                    <line class="web-line radial-6" x1="600" y1="400" x2="600" y2="750"/>
+                    <line class="web-line radial-7" x1="600" y1="400" x2="100" y2="700"/>
+                    <line class="web-line radial-8" x1="600" y1="400" x2="50" y2="400"/>
+                    
+                    <!-- Concentric web circles -->
+                    <circle class="web-circle circle-1" cx="600" cy="400" r="80"/>
+                    <circle class="web-circle circle-2" cx="600" cy="400" r="160"/>
+                    <circle class="web-circle circle-3" cx="600" cy="400" r="240"/>
+                    <circle class="web-circle circle-4" cx="600" cy="400" r="320"/>
+                </g>
+                
+                <!-- Small Web 1 - Top Left -->
+                <g class="small-web web-1">
+                    <line class="web-line small-radial" x1="200" y1="150" x2="120" y2="80"/>
+                    <line class="web-line small-radial" x1="200" y1="150" x2="200" y2="80"/>
+                    <line class="web-line small-radial" x1="200" y1="150" x2="280" y2="80"/>
+                    <line class="web-line small-radial" x1="200" y1="150" x2="280" y2="150"/>
+                    <line class="web-line small-radial" x1="200" y1="150" x2="280" y2="220"/>
+                    <line class="web-line small-radial" x1="200" y1="150" x2="120" y2="220"/>
+                    
+                    <circle class="web-circle small-circle" cx="200" cy="150" r="30"/>
+                    <circle class="web-circle small-circle" cx="200" cy="150" r="50"/>
+                    <circle class="web-node small-node" cx="200" cy="150" r="2"/>
+                </g>
+                
+                <!-- Small Web 2 - Top Right -->
+                <g class="small-web web-2">
+                    <line class="web-line small-radial" x1="1000" y1="120" x2="920" y2="60"/>
+                    <line class="web-line small-radial" x1="1000" y1="120" x2="1000" y2="60"/>
+                    <line class="web-line small-radial" x1="1000" y1="120" x2="1080" y2="60"/>
+                    <line class="web-line small-radial" x1="1000" y1="120" x2="1080" y2="120"/>
+                    <line class="web-line small-radial" x1="1000" y1="120" x2="1080" y2="180"/>
+                    <line class="web-line small-radial" x1="1000" y1="120" x2="920" y2="180"/>
+                    
+                    <circle class="web-circle small-circle" cx="1000" cy="120" r="25"/>
+                    <circle class="web-circle small-circle" cx="1000" cy="120" r="45"/>
+                    <circle class="web-node small-node" cx="1000" cy="120" r="2"/>
+                </g>
+                
+                <!-- Small Web 3 - Bottom Left -->
+                <g class="small-web web-3">
+                    <line class="web-line small-radial" x1="150" y1="650" x2="80" y2="600"/>
+                    <line class="web-line small-radial" x1="150" y1="650" x2="150" y2="590"/>
+                    <line class="web-line small-radial" x1="150" y1="650" x2="220" y2="600"/>
+                    <line class="web-line small-radial" x1="150" y1="650" x2="220" y2="650"/>
+                    <line class="web-line small-radial" x1="150" y1="650" x2="220" y2="700"/>
+                    <line class="web-line small-radial" x1="150" y1="650" x2="80" y2="700"/>
+                    
+                    <circle class="web-circle small-circle" cx="150" cy="650" r="28"/>
+                    <circle class="web-circle small-circle" cx="150" cy="650" r="48"/>
+                    <circle class="web-node small-node" cx="150" cy="650" r="2"/>
+                </g>
+                
+                <!-- Small Web 4 - Bottom Right -->
+                <g class="small-web web-4">
+                    <line class="web-line small-radial" x1="1050" y1="680" x2="980" y2="630"/>
+                    <line class="web-line small-radial" x1="1050" y1="680" x2="1050" y2="620"/>
+                    <line class="web-line small-radial" x1="1050" y1="680" x2="1120" y2="630"/>
+                    <line class="web-line small-radial" x1="1050" y1="680" x2="1120" y2="680"/>
+                    <line class="web-line small-radial" x1="1050" y1="680" x2="1120" y2="730"/>
+                    <line class="web-line small-radial" x1="1050" y1="680" x2="980" y2="730"/>
+                    
+                    <circle class="web-circle small-circle" cx="1050" cy="680" r="32"/>
+                    <circle class="web-circle small-circle" cx="1050" cy="680" r="52"/>
+                    <circle class="web-node small-node" cx="1050" cy="680" r="2"/>
+                </g>
+                
+                <!-- Tiny Web 1 - Left Side -->
+                <g class="tiny-web web-5">
+                    <line class="web-line tiny-radial" x1="80" y1="300" x2="50" y2="280"/>
+                    <line class="web-line tiny-radial" x1="80" y1="300" x2="110" y2="280"/>
+                    <line class="web-line tiny-radial" x1="80" y1="300" x2="110" y2="320"/>
+                    <line class="web-line tiny-radial" x1="80" y1="300" x2="50" y2="320"/>
+                    
+                    <circle class="web-circle tiny-circle" cx="80" cy="300" r="15"/>
+                    <circle class="web-node tiny-node" cx="80" cy="300" r="1"/>
+                </g>
+                
+                <!-- Tiny Web 2 - Right Side -->
+                <g class="tiny-web web-6">
+                    <line class="web-line tiny-radial" x1="1120" y1="350" x2="1090" y2="330"/>
+                    <line class="web-line tiny-radial" x1="1120" y1="350" x2="1150" y2="330"/>
+                    <line class="web-line tiny-radial" x1="1120" y1="350" x2="1150" y2="370"/>
+                    <line class="web-line tiny-radial" x1="1120" y1="350" x2="1090" y2="370"/>
+                    
+                    <circle class="web-circle tiny-circle" cx="1120" cy="350" r="18"/>
+                    <circle class="web-node tiny-node" cx="1120" cy="350" r="1"/>
+                </g>
+                
+                <!-- Connection nodes for main web -->
+                <g class="web-nodes">
+                    <circle class="web-node node-1" cx="520" cy="320" r="3"/>
+                    <circle class="web-node node-2" cx="680" cy="320" r="3"/>
+                    <circle class="web-node node-3" cx="760" cy="400" r="3"/>
+                    <circle class="web-node node-4" cx="680" cy="480" r="3"/>
+                    <circle class="web-node node-5" cx="520" cy="480" r="3"/>
+                    <circle class="web-node node-6" cx="440" cy="400" r="3"/>
+                    <circle class="web-node node-7" cx="600" cy="280" r="3"/>
+                    <circle class="web-node node-8" cx="600" cy="520" r="3"/>
+                </g>
+            </svg>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-greeting slide-left">Hi, I'm</div>
+                    <h1 class="hero-name slide-left">SREE KALYAN REDDY PASHAM</h1>
+                    <h2 class="hero-title slide-left">FULL STACK DEVELOPER</h2>
+                    <p class="hero-description fade-up">
+                        I'm a full stack developer, ace problem-solver, and human who creates 
+                        exceptional digital experiences through clean code and thoughtful design.
+                    </p>
+                    <div class="hero-social fade-up">
+                        <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h3 class="fade-up">Well hello!</h3>
+            <p class="fade-up">During my day job at Conflare Studio, I work with the technical director on development planning and strategy and lead the execution and troubleshooting for all of our Wordpress, Shopify, and Laravel websites. At Conflare I've launched 7 websites and worked on 16 client accounts. In a freelance capacity, I've worked with 3 clients.</p>
+            <a href="#" class="about-link fade-up">link to my about me page</a>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title fade-up">
+                <span class="spaced-text">MY WORK</span>
+            </h2>
+            <div class="portfolio-grid">
+                <!-- Portfolio items will be populated here -->
+                <div class="portfolio-item fade-up">
+                    <h3>FUNTERRA</h3>
+                    <p class="tech-stack">LARAVEL</p>
+                    <a href="#" class="portfolio-link">Check it out</a>
+                </div>
+                
+                <div class="portfolio-item fade-up">
+                    <h3>METIER BREWING CO.</h3>
+                    <p class="tech-stack">WORDPRESS</p>
+                    <a href="#" class="portfolio-link">Check it out</a>
+                </div>
+                
+                <div class="portfolio-item fade-up">
+                    <h3>MENTAL HEALTH INSTRUCTION</h3>
+                    <p class="tech-stack">WORDPRESS</p>
+                    <a href="#" class="portfolio-link">Check it out</a>
+                </div>
+                
+                <div class="portfolio-item fade-up">
+                    <h3>FLEXCAR</h3>
+                    <p class="tech-stack">WORDPRESS</p>
+                    <a href="#" class="portfolio-link">Check it out</a>
+                </div>
+                
+                <div class="portfolio-item fade-up">
+                    <h3>FOUNDRY LAW GROUP</h3>
+                    <p class="tech-stack">WORDPRESS</p>
+                    <a href="#" class="portfolio-link">Check it out</a>
+                </div>
+                
+                <div class="portfolio-item fade-up">
+                    <h3>STUDY USA</h3>
+                    <p class="tech-stack">YII</p>
+                    <a href="#" class="portfolio-link">Check it out</a>
+                </div>
+                
+                <div class="portfolio-item">
+                    <h3>ACF BASELINE</h3>
+                    <p class="tech-stack">WORDPRESS</p>
+                    <a href="#" class="portfolio-link">Check it out</a>
+                </div>
+                
+                <div class="portfolio-item fade-up">
+                    <h3>WEST COAST FRANCHISE LAW</h3>
+                    <p class="tech-stack">WORDPRESS</p>
+                    <a href="#" class="portfolio-link">Check it out</a>
+                </div>
+                
+                <div class="portfolio-item fade-up">
+                    <h3>THE COFFEE EXCHANGE</h3>
+                    <p class="tech-stack">SHOPIFY</p>
+                    <a href="#" class="portfolio-link">Check it out</a>
+                </div>
+                
+                <div class="portfolio-item fade-up">
+                    <h3>JON HECKY PORTFOLIO</h3>
+                    <p class="tech-stack">LARAVEL</p>
+                    <a href="#" class="portfolio-link">Check it out</a>
+                </div>
+                
+                <div class="portfolio-item fade-up">
+                    <h3>SAMMAMISH MONTESSORI</h3>
+                    <p class="tech-stack">WORDPRESS</p>
+                    <a href="#" class="portfolio-link">Check it out</a>
+                </div>
+                
+                <div class="portfolio-item fade-up">
+                    <h3>T. MAICEE</h3>
+                    <p class="tech-stack">WORDPRESS</p>
+                    <p class="status">Launching Soon</p>
+                </div>
+                
+                <div class="portfolio-item fade-up">
+                    <h3>MATHEWSON LAW</h3>
+                    <p class="tech-stack">WORDPRESS</p>
+                    <p class="status">Launching Soon</p>
+                </div>
+            </div>
+            <button class="load-more">Load More</button>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title fade-up">HEY HECKY!</h2>
+            <h3 class="contact-heading fade-up">
+                <span class="spaced-text">FILL OUT THE FORM, OR GRAB MY EMAIL</span>
+            </h3>
+            <p class="fade-up">Contact me to hire me for full time, part time or freelance roles. Or, send me a message just to chat over a great cup of coffee.</p>
+            
+            <div class="contact-content">
+                <form class="contact-form slide-left">
+                    <div class="form-group">
+                        <input type="text" placeholder="First & Last Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email Address *" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Phone Number">
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Message" rows="5"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">HEY HECKY!</button>
+                </form>
+                
+                <div class="contact-email slide-right">
+                    <h3><a href="mailto:jonathanhecky@gmail.com">JONATHANHECKY@GMAIL.COM</a></h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>Made with <span class="heart">♥</span> in Attleboro, MA</p>
+                <p>&copy; 2025 Jonathan Hecky. All rights reserved. <a href="#">Design by Ali Eddlem</a></p>
+                
+                <div class="additional-links">
+                    <a href="#">Yes!</a>
+                    <a href="#">No.</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Dot Navigation -->
+    <nav class="dot-nav">
+        <!-- Dark Mode Toggle -->
+        <div class="nav-toggle">
+            <div class="sun-moon-toggle">
+                <input type="checkbox" id="dad-mode-toggle">
+                <label for="dad-mode-toggle" class="sun-moon-switch">
+                    <div class="sun-moon-icon">
+                        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="4" fill="currentColor"/>
+                            <path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                </label>
+            </div>
+        </div>
+        
+        <a href="#hero" class="dot active" data-section="hero"></a>
+        <a href="#about" class="dot" data-section="about"></a>
+        <a href="#portfolio" class="dot" data-section="portfolio"></a>
+        <a href="#contact" class="dot" data-section="contact"></a>
+    </nav>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
