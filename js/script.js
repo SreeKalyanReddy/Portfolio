@@ -4,8 +4,8 @@ const mobileDadModeToggle = document.getElementById('mobile-dad-mode-toggle');
 const contactForm = document.querySelector('.contact-form');
 const loadMoreBtn = document.querySelector('.load-more');
 
-// Dark Mode Toggle - Default to dark mode
-let isDarkMode = true;
+// Dark Mode Toggle - Default to light mode
+let isDarkMode = false;
 
 // Sync both toggles
 function syncToggles(sourceToggle, targetToggle) {
@@ -306,12 +306,12 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Initialize dark mode from localStorage - Default to dark mode
+// Initialize dark mode from localStorage - Default to light mode
 function initializeDarkMode() {
     const darkModePreference = localStorage.getItem('darkMode');
-    
-    // Default to dark mode if no preference is set, or if preference is enabled
-    if (darkModePreference !== 'disabled') {
+
+    // Default to light mode if no preference is set
+    if (darkModePreference === 'enabled') {
         isDarkMode = true;
         if (dadModeToggle) dadModeToggle.checked = true;
         if (mobileDadModeToggle) mobileDadModeToggle.checked = true;
