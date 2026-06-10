@@ -895,7 +895,7 @@ input:checked + .sun-moon-switch .moon-icon {
     left: 6px;
     top: 6px;
     bottom: 6px;
-    width: 1.5px;
+    width: 3px;
     background: #dde2f0;
 }
 
