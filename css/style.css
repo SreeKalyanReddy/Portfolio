@@ -746,32 +746,54 @@ input:checked + .sun-moon-switch .moon-icon {
 .about {
     background: #ffffff;
     padding: 120px 0;
-    text-align: center;
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.about h3 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 2.25rem; /* 36px */
-    margin-bottom: 40px;
-    color: #333333;
+.about-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.about-text {
+    text-align: left;
+}
+
+.about-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    color: #3353a3;
     font-weight: 700;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+}
+
+.about-text h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2.25rem;
+    line-height: 1.2;
+    color: #1a1a1a;
+    font-weight: 700;
+    margin-bottom: 24px;
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.about p {
-    font-size: 1.125rem; /* 18px */
-    line-height: 1.7;
-    max-width: 700px;
+.about-text p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: #555555;
+    margin-bottom: 20px;
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    margin: 0 auto 40px;
-    color: #666666;
 }
 
 .about-link {
+    display: inline-block;
+    margin-top: 8px;
     color: #3353a3;
     text-decoration: none;
     font-weight: 600;
+    font-size: 0.95rem;
     border-bottom: 2px solid #3353a3;
     transition: all 0.3s ease;
     padding-bottom: 2px;
@@ -780,6 +802,42 @@ input:checked + .sun-moon-switch .moon-icon {
 .about-link:hover {
     color: #5a72d8;
     border-bottom-color: #5a72d8;
+}
+
+.about-sidebar {
+    padding-top: 8px;
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.about-stat {
+    background: #f6f8ff;
+    border: 1px solid #e4e9f8;
+    border-radius: 12px;
+    padding: 20px 16px;
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #3353a3;
+    line-height: 1;
+    margin-bottom: 6px;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: #777777;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
 }
 
 /* Portfolio Section */
@@ -796,7 +854,7 @@ input:checked + .sun-moon-switch .moon-icon {
 
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
 }
 
@@ -853,6 +911,38 @@ input:checked + .sun-moon-switch .moon-icon {
     color: #3353a3;
     font-style: italic;
     font-weight: 500;
+}
+
+.portfolio-desc {
+    font-size: 0.875rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+body.dark-mode .portfolio-desc {
+    color: #aaa;
+}
+
+.company-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.company-logo {
+    height: 32px;
+    width: auto;
+    max-width: 100px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.company-logo--wide {
+    max-width: 148px;
 }
 
 .load-more {
@@ -972,21 +1062,35 @@ input:checked + .sun-moon-switch .moon-icon {
     height: 100%;
 }
 
-.contact-email h3 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1.75rem; /* 28px */
-    font-weight: 700;
+.contact .contact-form {
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-.contact-email a {
+.contact-or {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 40px;
+    color: #888;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+}
+
+.contact-email-link {
+    font-family: 'Barlow', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
     color: #333333;
     text-decoration: none;
-    border-bottom: 3px solid #3353a3;
-    transition: all 0.3s ease;
-    padding-bottom: 3px;
+    border-bottom: 2px solid #3353a3;
+    padding-bottom: 4px;
+    transition: color 0.3s ease, border-color 0.3s ease;
+    letter-spacing: 0.02em;
 }
 
-.contact-email a:hover {
+.contact-email-link:hover {
     color: #3353a3;
     border-bottom-color: #5a72d8;
 }
@@ -1132,10 +1236,15 @@ input:checked + .sun-moon-switch .moon-icon {
         font-size: 2.25rem; /* 36px */
     }
     
-    .about h3 {
-        font-size: 2rem; /* 32px */
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
     }
-    
+
+    .about-text h3 {
+        font-size: 2rem;
+    }
+
     .contact-content {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -1144,6 +1253,11 @@ input:checked + .sun-moon-switch .moon-icon {
     .portfolio-grid {
         grid-template-columns: 1fr;
         gap: 30px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
     }
     
     .header {
@@ -1238,10 +1352,10 @@ input:checked + .sun-moon-switch .moon-icon {
         font-size: 1.875rem; /* 30px */
     }
     
-    .about h3 {
-        font-size: 1.875rem; /* 30px */
+    .about-text h3 {
+        font-size: 1.875rem;
     }
-    
+
     .portfolio-item h3 {
         font-size: 1.25rem; /* 20px */
     }
@@ -1254,6 +1368,91 @@ input:checked + .sun-moon-switch .moon-icon {
         padding: 30px;
     }
 }
+
+/* ── Skills Section ── */
+.skills {
+    padding: 100px 0;
+    background: #f0f4ff;
+}
+
+.skills .section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 24px;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: default;
+}
+
+.skill-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 24px rgba(51,83,163,0.14);
+}
+
+.skill-icon {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+}
+
+.skill-item span {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #444;
+    text-align: center;
+    letter-spacing: 0.03em;
+}
+
+/* ── Cert Badges ── */
+.cert-badges {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.cert-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f6f8ff;
+    border: 1.5px solid #e0e6ff;
+    border-radius: 10px;
+    padding: 10px 16px;
+    box-shadow: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.cert-icon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* ── Company brand-color top borders ── */
+.portfolio-item[data-company="solventum"] { border-top: 4px solid #00A94F; }
+.portfolio-item[data-company="capitalone"] { border-top: 4px solid #D4312C; }
+.portfolio-item[data-company="expedia"]    { border-top: 4px solid #003580; }
+.portfolio-item[data-company="optum"]      { border-top: 4px solid #FF6900; }
 
 /* Dark Mode Styles */
 body.dark-mode {
@@ -1416,12 +1615,27 @@ body.dark-mode .about {
     background: #222222;
 }
 
-body.dark-mode .about h3 {
+body.dark-mode .about-text h3 {
     color: #ffffff;
 }
 
-body.dark-mode .about p {
+body.dark-mode .about-text p {
     color: #cccccc;
+}
+
+body.dark-mode .about-stat {
+    background: #2a2a2a;
+    border-color: #3a3a3a;
+}
+
+body.dark-mode .stat-label {
+    color: #aaaaaa;
+}
+
+body.dark-mode .cert-badge {
+    background: #2a2a2a;
+    border-color: #3a3a3a;
+    color: #ddd;
 }
 
 body.dark-mode .portfolio {
@@ -1431,6 +1645,24 @@ body.dark-mode .portfolio {
 body.dark-mode .portfolio-item {
     background: #2a2a2a;
     border: 1px solid #333333;
+}
+
+body.dark-mode .portfolio-item[data-company="solventum"] { border-top: 4px solid #00A94F; }
+body.dark-mode .portfolio-item[data-company="capitalone"] { border-top: 4px solid #D4312C; }
+body.dark-mode .portfolio-item[data-company="expedia"]    { border-top: 4px solid #003580; }
+body.dark-mode .portfolio-item[data-company="optum"]      { border-top: 4px solid #FF6900; }
+
+body.dark-mode .skills {
+    background: #111;
+}
+
+body.dark-mode .skill-item {
+    background: #2a2a2a;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .skill-item span {
+    color: #ccc;
 }
 
 body.dark-mode .portfolio-item:hover {
@@ -1471,7 +1703,7 @@ body.dark-mode .form-group textarea::placeholder {
     color: #888888;
 }
 
-body.dark-mode .contact-email a {
+body.dark-mode .contact-email-link {
     color: #ffffff;
     border-bottom-color: #3353a3;
 }

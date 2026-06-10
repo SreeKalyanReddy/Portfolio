@@ -168,12 +168,12 @@ function initializePortfolio() {
     });
     
     // Hide load more button if all items are visible
-    if (portfolioItems.length <= portfolioItemsVisible) {
+    if (loadMoreBtn && portfolioItems.length <= portfolioItemsVisible) {
         loadMoreBtn.style.display = 'none';
     }
 }
 
-loadMoreBtn.addEventListener('click', function() {
+if (loadMoreBtn) loadMoreBtn.addEventListener('click', function() {
     const hiddenItems = Array.from(portfolioItems).slice(portfolioItemsVisible, portfolioItemsVisible + 6);
     
     hiddenItems.forEach((item, index) => {
@@ -381,6 +381,44 @@ function initializeGSAPAnimations() {
         }
     });
     
+    // Skills section
+    gsap.to('.skills .section-title', {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: '.skills',
+            start: 'top 80%',
+            toggleActions: 'play none none reverse'
+        }
+    });
+
+    gsap.to('.skill-item', {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        stagger: 0.05,
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: '.skills-grid',
+            start: 'top 80%',
+            toggleActions: 'play none none reverse'
+        }
+    });
+
+    gsap.to('.cert-badges', {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: '.cert-badges',
+            start: 'top 90%',
+            toggleActions: 'play none none reverse'
+        }
+    });
+
     // Portfolio section title
     gsap.to('.portfolio .section-title', {
         opacity: 1,
