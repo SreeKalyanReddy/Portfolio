@@ -525,12 +525,54 @@ function initializeGSAPAnimations() {
     });
 }
 
+function initializeTypingAnimation() {
+    const titles = [
+        'SENIOR SOFTWARE ENGINEER',
+        'CLOUD SOLUTIONS ARCHITECT',
+        'JAVA & SPRING BOOT EXPERT',
+        'FULL STACK DEVELOPER'
+    ];
+    const el = document.getElementById('typed-title');
+    if (!el) return;
+
+    let titleIndex = 0;
+    let charIndex = titles[0].length;
+    let isDeleting = false;
+
+    function tick() {
+        const current = titles[titleIndex];
+        if (isDeleting) {
+            charIndex--;
+            el.textContent = current.substring(0, charIndex);
+        } else {
+            charIndex++;
+            el.textContent = current.substring(0, charIndex);
+        }
+
+        let delay = isDeleting ? 45 : 75;
+
+        if (!isDeleting && charIndex === current.length) {
+            delay = 2200;
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            titleIndex = (titleIndex + 1) % titles.length;
+            delay = 350;
+        }
+
+        setTimeout(tick, delay);
+    }
+
+    setTimeout(tick, 3000);
+}
+
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
     initializePortfolio();
     initializeDarkMode();
     initializeDotNavigation();
     initializeGSAPAnimations();
+    initializeTypingAnimation();
 });
 
 // Easter Egg: Konami Code
