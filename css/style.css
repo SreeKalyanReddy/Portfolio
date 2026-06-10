@@ -865,7 +865,100 @@ input:checked + .sun-moon-switch .moon-icon {
 
 .portfolio .section-title {
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
+}
+
+/* ── Work Timeline ── */
+.work-timeline {
+    position: relative;
+    padding-left: 36px;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.work-timeline::before {
+    content: '';
+    position: absolute;
+    left: 9px;
+    top: 10px;
+    bottom: 10px;
+    width: 3px;
+    background: #dde2f0;
+    border-radius: 2px;
+}
+
+.work-entry {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.work-entry:last-child {
+    margin-bottom: 0;
+}
+
+.work-dot {
+    position: absolute;
+    left: -29px;
+    top: 20px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.work-entry[data-company="solventum"] .work-dot { background: #00A94F; }
+.work-entry[data-company="capitalone"] .work-dot { background: #D4312C; }
+.work-entry[data-company="expedia"]    .work-dot { background: #003580; }
+.work-entry[data-company="optum"]      .work-dot { background: #FF6900; }
+
+.work-card {
+    background: #ffffff;
+    border-top: 1px solid #e8e8e8;
+    border-right: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
+    border-left: 3px solid transparent;
+    border-radius: 0 12px 12px 0;
+    padding: 20px 24px;
+    transition: box-shadow 0.2s ease;
+}
+
+.work-entry[data-company="solventum"] .work-card { border-left-color: #00A94F; }
+.work-entry[data-company="capitalone"] .work-card { border-left-color: #D4312C; }
+.work-entry[data-company="expedia"]    .work-card { border-left-color: #003580; }
+.work-entry[data-company="optum"]      .work-card { border-left-color: #FF6900; }
+
+.work-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.work-header-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.work-role {
+    font-size: 0.875rem;
+    color: #666666;
+    font-weight: 500;
+}
+
+.work-period {
+    font-size: 0.75rem;
+    color: #999999;
+    white-space: nowrap;
+}
+
+.work-desc {
+    font-size: 0.9rem;
+    color: #555555;
+    line-height: 1.65;
+    margin: 0 0 14px;
 }
 
 .portfolio-layout {
@@ -1805,6 +1898,29 @@ body.dark-mode .skill-item span {
 
 body.dark-mode .portfolio-item:hover {
     background: #333333;
+}
+
+body.dark-mode .work-timeline::before {
+    background: #3a3a3a;
+}
+
+body.dark-mode .work-card {
+    background: #2a2a2a;
+    border-top-color: #3a3a3a;
+    border-right-color: #3a3a3a;
+    border-bottom-color: #3a3a3a;
+}
+
+body.dark-mode .work-role {
+    color: #aaaaaa;
+}
+
+body.dark-mode .work-period {
+    color: #777777;
+}
+
+body.dark-mode .work-desc {
+    color: #cccccc;
 }
 
 body.dark-mode .tech-tag {

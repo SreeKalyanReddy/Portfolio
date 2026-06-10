@@ -419,19 +419,6 @@ function initializeGSAPAnimations() {
         }
     });
 
-    // Experience timeline
-    gsap.to('.experience-timeline', {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: "power3.out",
-        scrollTrigger: {
-            trigger: '.portfolio-layout',
-            start: 'top 80%',
-            toggleActions: 'play none none reverse'
-        }
-    });
-
     // Portfolio section title
     gsap.to('.portfolio .section-title', {
         opacity: 1,
@@ -444,16 +431,16 @@ function initializeGSAPAnimations() {
             toggleActions: 'play none none reverse'
         }
     });
-    
-    // Portfolio items stagger animation
-    gsap.to('.portfolio-item', {
+
+    // Work timeline entries stagger
+    gsap.to('.work-entry', {
         opacity: 1,
         y: 0,
         duration: 0.6,
-        stagger: 0.1,
+        stagger: 0.15,
         ease: "power3.out",
         scrollTrigger: {
-            trigger: '.portfolio-grid',
+            trigger: '.work-timeline',
             start: 'top 80%',
             toggleActions: 'play none none reverse'
         }
@@ -498,24 +485,13 @@ function initializeGSAPAnimations() {
         }
     });
     
-    // Portfolio card hover animations
-    document.querySelectorAll('.portfolio-item').forEach(item => {
-        item.addEventListener('mouseenter', () => {
-            gsap.to(item, {
-                scale: 1.05,
-                y: -10,
-                duration: 0.3,
-                ease: "power2.out"
-            });
+    // Work entry hover animations
+    document.querySelectorAll('.work-card').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            gsap.to(card, { x: 4, duration: 0.2, ease: "power2.out" });
         });
-        
-        item.addEventListener('mouseleave', () => {
-            gsap.to(item, {
-                scale: 1,
-                y: 0,
-                duration: 0.3,
-                ease: "power2.out"
-            });
+        card.addEventListener('mouseleave', () => {
+            gsap.to(card, { x: 0, duration: 0.2, ease: "power2.out" });
         });
     });
     
