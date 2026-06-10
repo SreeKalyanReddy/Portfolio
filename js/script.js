@@ -419,6 +419,19 @@ function initializeGSAPAnimations() {
         }
     });
 
+    // Experience timeline
+    gsap.to('.experience-timeline', {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: '.portfolio-layout',
+            start: 'top 80%',
+            toggleActions: 'play none none reverse'
+        }
+    });
+
     // Portfolio section title
     gsap.to('.portfolio .section-title', {
         opacity: 1,
