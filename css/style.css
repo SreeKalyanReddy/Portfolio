@@ -868,6 +868,89 @@ input:checked + .sun-moon-switch .moon-icon {
     margin-bottom: 80px;
 }
 
+.portfolio-layout {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 48px;
+    align-items: start;
+}
+
+/* Timeline */
+.timeline-heading {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    font-weight: 700;
+    color: #3353a3;
+    margin-bottom: 20px;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 20px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    bottom: 6px;
+    width: 1.5px;
+    background: #dde2f0;
+}
+
+.timeline-item {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 28px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-dot {
+    flex-shrink: 0;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    margin-left: -20px;
+    margin-top: 3px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 0 0 1.5px #dde2f0;
+}
+
+.timeline-item[data-company="solventum"] .timeline-dot { background: #00A94F; box-shadow: 0 0 0 1.5px #00A94F; }
+.timeline-item[data-company="capitalone"] .timeline-dot { background: #D4312C; box-shadow: 0 0 0 1.5px #D4312C; }
+.timeline-item[data-company="expedia"]    .timeline-dot { background: #003580; box-shadow: 0 0 0 1.5px #003580; }
+.timeline-item[data-company="optum"]      .timeline-dot { background: #FF6900; box-shadow: 0 0 0 1.5px #FF6900; }
+
+.timeline-period {
+    display: block;
+    font-size: 0.7rem;
+    color: #999;
+    font-weight: 500;
+    margin-bottom: 3px;
+    letter-spacing: 0.02em;
+}
+
+.timeline-company {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 2px;
+}
+
+.timeline-role {
+    font-size: 0.78rem;
+    color: #666;
+    margin: 0;
+}
+
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1276,6 +1359,35 @@ body.dark-mode .portfolio-desc {
         gap: 40px;
     }
     
+    .portfolio-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .timeline {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px 32px;
+        padding-left: 0;
+    }
+
+    .timeline::before {
+        display: none;
+    }
+
+    .timeline-item {
+        margin-bottom: 0;
+        padding-left: 14px;
+        border-left: 2px solid #dde2f0;
+    }
+
+    .timeline-item[data-company="solventum"] { border-left-color: #00A94F; }
+    .timeline-item[data-company="capitalone"] { border-left-color: #D4312C; }
+    .timeline-item[data-company="expedia"]    { border-left-color: #003580; }
+    .timeline-item[data-company="optum"]      { border-left-color: #FF6900; }
+
+    .timeline-dot { display: none; }
+
     .portfolio-grid {
         grid-template-columns: 1fr;
         gap: 30px;
@@ -1699,6 +1811,22 @@ body.dark-mode .tech-tag {
     background: #1e2540;
     border-color: #2e3a6e;
     color: #8da4e8;
+}
+
+body.dark-mode .timeline::before {
+    background: #3a3a3a;
+}
+
+body.dark-mode .timeline-company {
+    color: #e0e0e0;
+}
+
+body.dark-mode .timeline-role {
+    color: #aaaaaa;
+}
+
+body.dark-mode .timeline-dot {
+    border-color: #222222;
 }
 
 body.dark-mode .portfolio-item h3 {
